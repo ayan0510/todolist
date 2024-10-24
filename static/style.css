@@ -1,15 +1,20 @@
 :root {
-    --color-primary: #ffd700;  /* Yellow */
-    --color-secondary: #1e90ff;  /* Blue */
-    --color-dark: #111111;  /* Black */
-    --color-light: #f8f8f8;
-    --color-gray: #888888;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --color-primary: #77b6eaff;
+    /* argentinian-blue */
+    --color-secondary: #c7d3ddff;
+    /* columbia-blue */
+    --color-background: #e8eef2ff;
+    /* alice-blue */
+    --color-accent: #d6c9c9ff;
+    /* timberwolf */
+    --color-dark: #37393aff;
+    /* onyx */
+    --shadow: 0 4px 6px rgba(55, 57, 58, 0.1);
 }
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--color-light);
+    background-color: var(--color-background);
     color: var(--color-dark);
     line-height: 1.6;
 }
@@ -22,7 +27,7 @@ body {
 
 .site-header {
     background-color: var(--color-dark);
-    color: var(--color-primary);
+    color: var(--color-background);
     padding: 1rem 0;
     box-shadow: var(--shadow);
 }
@@ -30,6 +35,7 @@ body {
 .site-title {
     margin: 0;
     font-size: 2rem;
+    color: var(--color-primary);
 }
 
 .main-nav ul {
@@ -43,7 +49,7 @@ body {
 }
 
 .main-nav ul li a {
-    color: var(--color-light);
+    color: var(--color-background);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -69,8 +75,10 @@ body {
     width: 100%;
     padding: 0.5rem;
     margin-bottom: 1rem;
-    border: 1px solid var(--color-gray);
+    border: 1px solid var(--color-secondary);
     border-radius: 4px;
+    background-color: white;
+    color: var(--color-dark);
 }
 
 .btn {
@@ -89,11 +97,11 @@ body {
 
 .btn-primary {
     background-color: var(--color-primary);
-    color: var(--color-dark);
+    color: white;
 }
 
 .btn-primary:hover {
-    background-color: #e6c200;
+    background-color: #5da1d9;
 }
 
 .task-list {
@@ -103,7 +111,7 @@ body {
 
 .task-item {
     background-color: white;
-    border-left: 5px solid var(--color-secondary);
+    border-left: 5px solid var(--color-primary);
     border-radius: 8px;
     margin-bottom: 1rem;
     padding: 1rem;
@@ -119,13 +127,14 @@ body {
 }
 
 .task-complete {
-    border-left-color: var(--color-primary);
-    background-color: #fffdf0;
+    border-left-color: var(--color-accent);
+    background-color: var(--color-secondary);
 }
 
 .task-complete .task-text {
     text-decoration: line-through;
-    color: var(--color-gray);
+    color: var(--color-dark);
+    opacity: 0.7;
 }
 
 .task-checkbox {
@@ -136,16 +145,19 @@ body {
 
 .task-content {
     flex-grow: 1;
+    color: var(--color-dark);
 }
 
 .task-text {
     font-size: 1.1rem;
     margin-right: 1rem;
+    color: var(--color-dark);
 }
 
 .task-deadline {
     font-size: 0.9rem;
-    color: var(--color-gray);
+    color: var(--color-dark);
+    opacity: 0.8;
 }
 
 .task-actions {
@@ -154,12 +166,12 @@ body {
 }
 
 .btn-toggle {
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     color: white;
 }
 
 .btn-edit {
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
     color: var(--color-dark);
 }
 
@@ -170,7 +182,8 @@ body {
 
 .no-tasks {
     text-align: center;
-    color: var(--color-gray);
+    color: var(--color-dark);
+    opacity: 0.7;
     font-style: italic;
     margin-top: 2rem;
 }
@@ -178,19 +191,9 @@ body {
 .site-footer {
     margin-top: 3rem;
     text-align: center;
-    color: var(--color-gray);
+    color: var(--color-dark);
+    opacity: 0.8;
     font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-    .task-item {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .task-actions {
-        margin-top: 1rem;
-    }
 }
 
 .alert {
@@ -210,21 +213,7 @@ body {
     color: white;
 }
 
-:root {
-    --color-primary: #ffd700;  /* Yellow */
-    --color-secondary: #1e90ff;  /* Blue */
-    --color-dark: #111111;  /* Black */
-    --color-light: #f8f8f8;
-    --color-gray: #888888;
-    --color-background: #222222;  /* Dark background */
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-body {
-    background-color: var(--color-background);
-    color: var(--color-light);
-}
-
+/* Auth styles */
 .auth-container {
     display: flex;
     justify-content: center;
@@ -234,7 +223,7 @@ body {
 }
 
 .auth-box {
-    background-color: var(--color-dark);
+    background-color: white;
     border-radius: 8px;
     padding: 2rem;
     width: 100%;
@@ -256,10 +245,10 @@ body {
     width: 100%;
     padding: 0.75rem;
     font-size: 1rem;
-    border: 1px solid var(--color-gray);
+    border: 1px solid var(--color-secondary);
     border-radius: 4px;
-    background-color: var(--color-background);
-    color: var(--color-light);
+    background-color: white;
+    color: var(--color-dark);
     transition: border-color 0.3s ease;
 }
 
@@ -275,34 +264,70 @@ body {
 
 .btn-secondary {
     background-color: var(--color-secondary);
-    color: var(--color-light);
+    color: var(--color-dark);
 }
 
 .btn-secondary:hover {
-    background-color: #1a7ae0;
+    background-color: #b3c2cf;
 }
 
-/* Update existing styles */
-.btn {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
+@media (max-width: 768px) {
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-actions {
+        margin-top: 1rem;
+    }
 }
 
-.task-form input[type="text"],
-.task-form input[type="date"] {
-    background-color: var(--color-background);
-    color: var(--color-light);
+.input-group {
+    position: relative;
+    margin-bottom: 1rem;
 }
 
-.task-item {
-    background-color: var(--color-dark);
-    color: var(--color-light);
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
 }
 
-.task-complete {
-    background-color: #2a2a2a;
+.input-group input {
+    padding-left: 40px !important;
+}
+
+.btn-icon {
+    margin-right: 8px;
+}
+
+.action-icon {
+    font-size: 1.2rem;
+}
+
+.deadline-icon {
+    margin-right: 4px;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
 }
 
 .no-tasks {
-    color: var(--color-gray);
+    text-align: center;
+    padding: 2rem;
+}
+
+.btn-edit,
+.btn-delete {
+    padding: 0.5rem;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }

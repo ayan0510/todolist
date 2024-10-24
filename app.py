@@ -7,7 +7,7 @@ from datetime import datetime
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///project.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SECRET_KEY"] = "your_secret_key_here"  # Change this to a random secret key
+app.config["SECRET_KEY"] = "your_secret_key_here" 
 db = SQLAlchemy(app)
 
 class User(db.Model):
@@ -140,4 +140,4 @@ def inject_current_year():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(port=5000, host="0.0.0.0", debug=True)
+    app.run(port=5001, host="0.0.0.0", debug=True)
