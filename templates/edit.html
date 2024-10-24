@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Task - Todo List{% endblock %}
+
+{% block content %}
+<section class="edit-task">
+    <h2>Edit Task</h2>
+    <form action="{{ url_for('edit_task', id=task.id) }}" method="POST" class="task-form">
+        <input type="text" name="task_description" value="{{ task.content }}" required>
+        <input type="date" name="task_deadline" value="{{ task.deadline.strftime('%Y-%m-%d') if task.deadline else '' }}">
+        <div class="form-group">
+            <label>
+                <input type="checkbox" name="task_complete" {% if task.complete %}checked{% endif %}>
+                Mark as complete
+            </label>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Task</button>
+    </form>
+</section>
+{% endblock %}
